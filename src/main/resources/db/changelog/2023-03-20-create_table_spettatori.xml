@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="2023-03-20-create_table_spettatori-001" author="alisamorpheus">
+        <comment>CREATE TABLE SPETTATORI</comment>
+        <createTable tableName="spettatori">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" primaryKeyName="pk_spettatori" />
+            </column>
+            <column name="nome" type="VARCHAR(100)" />
+            <column name="cognome" type="VARCHAR(100)" />
+            <column name="dataNascita" type="DATE" />
+            <column name="idBiglietto" type="BIGINT" />
+            <column name="idSala" type="BIGINT" />
+        </createTable>
+        <rollback>
+            <dropTable tableName="spettatori" />
+        </rollback>
+    </changeSet>
+
+    <changeSet id="2023-03-20-create_table_spettatori-002" author="alisamorpheus">
+        <comment>CREATE NOT NULL CONSTRAINT ON TABLE SPETTATORI COLUMN NOME</comment>
+        <addNotNullConstraint tableName="spettatori" columnName="nome" columnDataType="VARCHAR(100)" />
+        <rollback>
+            <dropNotNullConstraint tableName="spettatori" columnName="nome" />
+        </rollback>
+    </changeSet>
+    <changeSet id="2023-03-20-create_table_spettatori-003" author="alisamorpheus">
+        <comment>CREATE NOT NULL CONSTRAINT ON TABLE SPETTATORI COLUMN COGNOME</comment>
+        <addNotNullConstraint tableName="spettatori" columnName="cognome" columnDataType="VARCHAR(100)" />
+        <rollback>
+            <dropNotNullConstraint tableName="spettatori" columnName="cognome" />
+        </rollback>
+    </changeSet>
+    <changeSet id="2023-03-20-create_table_spettatori-004" author="alisamorpheus">
+        <comment>CREATE NOT NULL CONSTRAINT ON TABLE SPETTATORI COLUMN DATANASCITA</comment>
+        <addNotNullConstraint tableName="spettatori" columnName="dataNascita" columnDataType="DATE" />
+        <rollback>
+            <dropNotNullConstraint tableName="spettatori" columnName="dataNascita" />
+        </rollback>
+    </changeSet>
+<changeSet id="2023-03-20-create_table_spettatori-005" author="alisamorpheus">
+        <comment>CREATE NOT NULL CONSTRAINT ON TABLE SPETTATORI COLUMN IDBIGLIETTO</comment>
+        <addNotNullConstraint tableName="spettatori" columnName="idBiglietto" columnDataType="BIGINT" />
+        <rollback>
+            <dropNotNullConstraint tableName="spettatori" columnName="idBiglietto" />
+        </rollback>
+    </changeSet>
+<changeSet id="2023-03-20-create_table_spettatori-006" author="alisamorpheus">
+        <comment>CREATE NOT NULL CONSTRAINT ON TABLE SPETTATORI COLUMN IDSALA</comment>
+        <addNotNullConstraint tableName="spettatori" columnName="idSala" columnDataType="BIGINT" />
+        <rollback>
+            <dropNotNullConstraint tableName="spettatori" columnName="idSala" />
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>

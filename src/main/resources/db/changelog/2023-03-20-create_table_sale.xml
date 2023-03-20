@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="2023-03-20-create_table_sale-001" author="alisamorpheus">
+        <comment>CREATE TABLE SALE</comment>
+        <createTable tableName="sale">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" primaryKeyName="pk_sale" />
+            </column>
+            <column name="idSpettatore" type="BIGINT" />
+            <column name="idFilm" type="BIGINT" />
+            <column name="idCinema" type="BIGINT" />
+        </createTable>
+        <rollback>
+            <dropTable tableName="sale" />
+        </rollback>
+    </changeSet>
+
+    <changeSet id="2023-03-20-create_table_sale-002" author="alisamorpheus">
+        <comment>CREATE NOT NULL CONSTRAINT ON TABLE SALE COLUMN IDFILM</comment>
+        <addNotNullConstraint tableName="sale" columnName="idFilm" columnDataType="BIGINT" />
+        <rollback>
+            <dropNotNullConstraint tableName="sale" columnName="idFilm" />
+        </rollback>
+    </changeSet>
+    <changeSet id="2023-03-20-create_table_sale-003" author="alisamorpheus">
+        <comment>CREATE NOT NULL CONSTRAINT ON TABLE SALE COLUMN IDCINEMA</comment>
+        <addNotNullConstraint tableName="sale" columnName="idCinema" columnDataType="BIGINT" />
+        <rollback>
+            <dropNotNullConstraint tableName="sale" columnName="idCinema" />
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>
