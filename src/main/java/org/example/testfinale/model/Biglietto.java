@@ -20,8 +20,4 @@ public class Biglietto {
     private int posto;
     private double prezzo;
 
-    // conterrà le seguenti funzionalità
-    //• Applicare riduzioni agli anziani
-    //• Calcolare la riduzione per Bambini
-
 }

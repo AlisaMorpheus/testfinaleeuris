@@ -19,11 +19,10 @@ public class Cinema {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Transient
+    private String nomeCinema;
+    /*@Transient
     private int idSala;
     @OneToMany(mappedBy = "cinema")
-    private List<Sala> sale;
+    private List<Sala> sale;*/
 
-
-    //funz incassi sommando gli incassi delle sale
 }

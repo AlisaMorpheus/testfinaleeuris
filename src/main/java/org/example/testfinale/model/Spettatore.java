@@ -33,13 +33,4 @@ public class Spettatore {
     @JoinColumn(name = "idSala")
     private Sala sala;
 
-
-    //funzionalità che restituisca un valore booleano
-    // per determinare la minore o maggiore età
-    //dello spettatore;
-    // ad una funzionalità che restituisca l'età dello spettatore come valore intero
-    //funz get sconto --> > 70 e 50 < 5
-    //valore sconto
-
-
 }

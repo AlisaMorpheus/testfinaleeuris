@@ -9,19 +9,17 @@
             <column name="id" type="BIGINT" autoIncrement="true">
                 <constraints primaryKey="true" primaryKeyName="pk_cinema" />
             </column>
+            <column name="nomeCinema" type="VARCHAR(100)" />
         </createTable>
         <rollback>
             <dropTable tableName="cinema" />
         </rollback>
     </changeSet>
     <changeSet id="2023-03-20-create_table_cinema-002" author="alisamorpheus">
-        <comment>CREATE COLUMN IDSALA</comment>
-        <addColumn tableName="cinema">
-            <column name="idSala" type="BIGINT"/>
-        </addColumn>
-
+        <comment>CREATE NOT NULL CONSTRAINT ON TABLE CINEMA COLUMN NOMECINEMA</comment>
+        <addNotNullConstraint tableName="cinema" columnName="nomeCinema" columnDataType="VARCHAR(100)" />
         <rollback>
-            <dropColumn tableName="cinema" columnName="idSala"/>
+            <dropNotNullConstraint tableName="cinema" columnName="nomeCinema" />
         </rollback>
     </changeSet>
 

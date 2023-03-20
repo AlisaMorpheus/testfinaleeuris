@@ -35,12 +35,4 @@ public class Sala {
     @JoinColumn(name = "idCinema")
     private Cinema cinema;
 
-
-    //attributi un insieme di spettatori
-    // di dimensione fissata e contiene
-    // il riferimento al film
-    //funz svuota sala e ingresso di 1 spettatore alla volta
-    //eccezione SalaAlCompleto
-    //eccezione FilmVietatoAiMinori
-    //incasso singola sala
 }
