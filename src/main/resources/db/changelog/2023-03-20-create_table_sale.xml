@@ -9,7 +9,6 @@
             <column name="id" type="BIGINT" autoIncrement="true">
                 <constraints primaryKey="true" primaryKeyName="pk_sale" />
             </column>
-            <column name="idSpettatore" type="BIGINT" />
             <column name="idFilm" type="BIGINT" />
             <column name="idCinema" type="BIGINT" />
         </createTable>

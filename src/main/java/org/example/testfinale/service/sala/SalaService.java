@@ -1,12 +1,16 @@
 package org.example.testfinale.service.sala;
 
+import org.example.testfinale.model.GenericResponse;
 import org.example.testfinale.model.Spettatore;
 
+import java.util.Date;
+
 public interface SalaService {
-    //attributi un insieme di spettatori
-    // di dimensione fissata e contiene
-    //funz svuota sala e ingresso di 1 spettatore alla volta
-    void addSpettatore(Spettatore spettatore);
+    //funz svuota sala
+    Boolean svuotaSala();
+
+    // ingresso di uno spettatore alla volta
+    GenericResponse<Spettatore> insertSpettatore(String nome, String cognome, Date dataNascita, int idBiglietto, int idSala);
     //eccezione SalaAlCompleto
     //eccezione FilmVietatoAiMinori
 

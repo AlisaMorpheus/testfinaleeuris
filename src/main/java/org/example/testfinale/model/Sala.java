@@ -21,10 +21,6 @@ public class Sala {
     //private List<Spettatore> spettatori;
     //private final int spettatoriMax = 180;
     @Transient
-    private int idSpettatore;
-    @OneToMany(mappedBy = "sala")
-    private List<Spettatore> spettatori;
-    @Transient
     private int idFilm;
     @OneToOne
     @JoinColumn(name = "idFilm")
