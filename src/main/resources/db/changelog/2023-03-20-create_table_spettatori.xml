@@ -12,8 +12,12 @@
             <column name="nome" type="VARCHAR(100)" />
             <column name="cognome" type="VARCHAR(100)" />
             <column name="dataNascita" type="DATE" />
-            <column name="idBiglietto" type="BIGINT" />
-            <column name="idSala" type="BIGINT" />
+            <column name="idBiglietto" type="BIGINT" >
+                <constraints foreignKeyName="fk_spettatore_biglietto" nullable="false" references="biglietto(id)" />
+            </column>
+            <column name="idSala" type="BIGINT">
+                <constraints foreignKeyName="fk_spettatore_sala" nullable="false" references="sala(id)" />
+            </column>
         </createTable>
         <rollback>
             <dropTable tableName="spettatori" />
