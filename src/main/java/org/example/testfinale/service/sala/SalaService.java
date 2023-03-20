@@ -1,7 +1,8 @@
 package org.example.testfinale.service.sala;
 
-import org.example.testfinale.model.GenericResponse;
+import org.example.testfinale.model.response.GenericResponse;
 import org.example.testfinale.model.Spettatore;
+import org.example.testfinale.model.response.SpettatoreDto;
 
 import java.util.Date;
 
@@ -10,7 +11,7 @@ public interface SalaService {
     Boolean svuotaSala();
 
     // ingresso di uno spettatore alla volta
-    GenericResponse<Spettatore> insertSpettatore(String nome, String cognome, Date dataNascita, int idBiglietto, int idSala);
+    GenericResponse<SpettatoreDto> insertSpettatore(String nome, String cognome, Date dataNascita, int idBiglietto, int idSala);
     //eccezione SalaAlCompleto
     //eccezione FilmVietatoAiMinori
 

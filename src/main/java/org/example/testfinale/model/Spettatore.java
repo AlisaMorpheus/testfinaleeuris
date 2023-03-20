@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.example.testfinale.model.response.SpettatoreDto;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -33,4 +34,14 @@ public class Spettatore {
     @JoinColumn(name = "idSala")
     private Sala sala;
 
+    public SpettatoreDto toDto(){
+        return SpettatoreDto.builder()
+                .id(id)
+                .nome(nome)
+                .cognome(cognome)
+                .dataNascita(dataNascita)
+                .idBiglietto(idBiglietto)
+                .idSala(idSala)
+                .build();
+    }
 }

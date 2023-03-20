@@ -1,4 +1,4 @@
-package org.example.testfinale.model;
+package org.example.testfinale.model.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
